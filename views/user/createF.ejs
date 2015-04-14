@@ -1,0 +1,59 @@
+<div class="container">
+	<form action="/user/create" class="form-horizontal createForm" method="POST">
+	<% if(flash && flash.err){ %>
+	<ul class="alert alert-danger">
+	<% Object.keys(flash.err).forEach(function(error){ %>
+	<li><%- JSON.stringify(flash.err[error]) %></li>
+	<% }) %>
+	</ul>
+	<% } %>
+		<div class="form-group">
+			<label for="username" class="col-sm-2 control-label">Username</label>
+			<div class="col-sm-10">
+				<input type="text" placeholder="type your name here..." id="username" class="col-sm-10 form-control" name="username">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-2 control-label">First Name</label>
+			<div class="col-sm-10">
+				<input type="text" id="firstname" class="form-control" name="firstname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-2 control-label" >Last Name</label>
+			<div class="col-sm-10">
+				<input type="text" id="lastname" class="form-control" name="lastname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email" class="col-sm-2 control-label" >E-mail</label>
+			<div class="col-sm-10">
+				<input type="email" id="email" class="form-control" name="email">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="url" class="col-sm-2 control-label" >URL</label>
+			<div class="col-sm-10">
+				<input type="text" id="url" class="form-control" name="url">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password" class="col-sm-2 control-label" >Password</label>
+			<div class="col-sm-10">
+				<input type="password" id="password" class="form-control" name="password">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="confirm_password" class="col-sm-2 control-label" >Repeat Password</label>
+			<div class="col-sm-10">
+				<input type="password" id="confirm_password" class="form-control" name="confirm_password">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-10 col-sm-offset-2">
+				<input type="submit" value="sign up" class="btn btn-primary">
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+			Information about <%= user.username %>
+			</h3>
+			<% if (user.admin){ %>
+			<img src="/images/admin.png" alt="admin"> admin
+			<% }else{ %>
+			<img src="/images/pawn.png" alt="pawn"> pawn
+			<% } %>
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li><strong>First Name:</strong> <%= user.firstname  %></li>
+				<li><strong>Last Name:</strong> <%= user.lastname  %></li>
+				<li><strong>E-mail:</strong> <%= user.email  %></li>
+				<li><strong>URL:</strong> <%= user.url  %></li>
+			</ul>
+		</div>
+		<div class="panel-footer">
+			<a href="/user/updateF/<%= user.username %>" class="btn btn-success" >edit</a>
+		</div>
+
+	</div>
+</div>
